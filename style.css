@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* camada extra para aplicar efeito no vídeo */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* substitui o brightness */
+    backdrop-filter: blur(2px);      /* blur mais leve */
+    z-index: -1;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.6); /* fundo translúcido */
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* textos sólidos */
+.login-container * {
+    color: #333 !important;
+    opacity: 1 !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #008000 !important;
+    font-weight: 700;
+}
+
+.aviso-uso, .aviso-lgpd {
+    background-color: rgba(0, 128, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 6px solid #008000;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.aviso-lgpd h3, .aviso-uso h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.3em;
+    color: #008000 !important;
+    font-weight: 600;
+}
+
+.aviso-lgpd p, .aviso-uso h5 {
+    margin: 0 0 1rem;
+    text-align: justify;
+    color: #555 !important;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    gap: 12px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    accent-color: #008000;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    border: 2px solid #008000;
+}
+
+.checkbox-container label {
+    font-size: 0.9em;
+    text-align: left;
+    color: #555 !important;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.btn-conectar {
+    background-color: #ccc;
+    color: #fff !important;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: not-allowed;
+    transition: all 0.4s ease;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-conectar.ativo {
+    background: linear-gradient(45deg, #008000, #006400);
+    cursor: pointer;
+}
+
+.btn-conectar.ativo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-conectar.ativo:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.erro {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 6px solid red;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    font-size: 0.9em;
+    color: #b30000 !important;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-conectar {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .checkbox-container {
+        justify-content: center;
+    }
+}
