@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="cptvprtl.mp4" type="video/mp4">
+    </video>
+
+    <div class="login-container">
+        <h2>São José Agroindustrial</h2>
+        
+        <div class="aviso-lgpd">
+            <h3><i class="fas fa-shield-alt"></i> Aviso de Uso da Rede Wi-Fi</h3>
+            <p>
+                Ao clicar em 'Aceitar e Conectar', você concorda com o tratamento de seus dados pessoais, como nome, MAC do dispositivo, IP, horário de uso e login para autenticação, segurança e controle da rede, conforme a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
+            </p>
+            <p>
+                Os dados serão usados apenas internamente e não serão compartilhados com terceiros sem autorização legal.
+            </p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="aceiteTermos">
+                <label for="aceiteTermos">Eu li e concordo com os termos de uso.</label>
+            </div>
+        </div>
+
+        <button id="btn-conectar" class="btn-conectar" aria-label="Aceitar os termos e conectar à rede">
+            Aceitar e Conectar
+        </button>
+    </div>
+
+    <script>
+        const checkbox = document.getElementById('aceiteTermos');
+        const btnConectar = document.getElementById('btn-conectar');
+
+        // botão inicia desabilitado
+        btnConectar.disabled = true;
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                btnConectar.disabled = false;
+                btnConectar.classList.add('ativo');
+            } else {
+                btnConectar.disabled = true;
+                btnConectar.classList.remove('ativo');
+            }
+        });
+
+        // ação ao clicar no botão
+        btnConectar.addEventListener('click', function() {
+            if (!btnConectar.disabled) {
+                // redireciona para a página desejada
+                window.location.href = "https://www.saojoseagroindustrial.com.br/";
+                // 👉 se quiser abrir em nova aba, use:
+                // window.open("https://www.seusite.com/pagina-especifica", "_blank");
+            }
+        });
+    </script>
+
+</body>
+</html>
